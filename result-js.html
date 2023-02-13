@@ -1,0 +1,40 @@
+<script>
+
+   $(document).ready(function () {
+      if (document.getElementById("modulExt1").innerText == "Модуль расширения:") {
+         document.getElementById("modulExt1").remove();
+      }
+
+      if (document.getElementById("powerUnit1").innerText == "Силовая часть: не важно (не важно)") {
+         document.getElementById("powerUnit1").innerText = "Силовая часть: не важно"
+      }
+
+      if (document.getElementById("modulExt2").innerText == "Модуль расширения:") {
+         document.getElementById("modulExt2").remove();
+      }
+
+      if (document.getElementById("powerUnit2").innerText == "Силовая часть: не важно (не важно)") {
+         document.getElementById("powerUnit2").innerText = "Силовая часть: не важно"
+      }
+
+
+      document.getElementById("aDocArt1").addEventListener("click", aDocArt1Click);
+      document.getElementById("aSpecArt1").addEventListener("click", aSpecArt1Click);
+      document.getElementById("aDocArt2").addEventListener("click", aDocArt2Click);
+      document.getElementById("aSpecArt2").addEventListener("click", aSpecArt2Click);
+
+      function aDocArt1Click() {
+         google.script.run.aClicked({ v: "doc", t: document.getElementById("divVariant1").innerText });
+      }
+      function aSpecArt1Click() {
+         google.script.run.aClicked({ v: "spec", t: document.getElementById("divVariant1").innerText });
+      }
+      function aDocArt2Click() {
+         google.script.run.aClicked({ v: "doc", t: document.getElementById("divVariant2").innerText });
+      }
+      function aSpecArt2Click() {
+         google.script.run.aClicked({ v: "spec", t: document.getElementById("divVariant2").innerText });
+      }
+   });
+   
+</script>
